@@ -9,9 +9,13 @@
 
 <script setup>
 import { ref } from "vue";
+import { getFileOpen } from "packages/project/src/api/file.js";
 
 function openAdd() {
   dialogVisible.value = true;
+  getFileOpen().then((res) => {
+    console.log(res);
+  });
 }
 
 const dialogVisible = ref(false);
